@@ -7,10 +7,6 @@ ITEM_DIR="$CONFIG_DIR/items"
 # COLORS
 source "$HOME/.config/sketchybar/colors.sh"
 source "$HOME/.config/sketchybar/icons.sh"
-sketchybar --bar position=top height=40 blur_radius=30 color=0x40000000
-
-PADDINGS=3
-
 
 ##### Bar Appearance #####
 # Configuring the general appearance of the bar, these are only some of the
@@ -46,15 +42,10 @@ sketchybar --default icon.font="SF Pro:Semibold:15.0"  \
                      icon.padding_right=4
 
 # --- Right Side Items ---
-
-# CALENDAR
-source $ITEM_DIR/calendar.sh
-# VOLUME
-source $ITEM_DIR/volume.sh
-# BATTERY
-source $ITEM_DIR/battery.sh
-# CPU 
-source $ITEM_DIR/cpu.sh
+source "$ITEM_DIR/calendar.sh"
+source "$ITEM_DIR/volume.sh"
+source "$ITEM_DIR/battery.sh"
+source "$ITEM_DIR/cpu.sh"
 
 # --- Left Side Items ---
 source "$ITEM_DIR/apple.sh"
