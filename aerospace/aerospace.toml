@@ -66,12 +66,12 @@ preset = 'qwerty'
 
 #                 See: https://nikitabobko.github.io/AeroSpace/guide#assign-workspaces-to-monitors
 [gaps]
-inner.horizontal = 10
-inner.vertical =   10
-outer.left =       10
-outer.bottom =     10
-outer.top =        10
-outer.right =      10
+inner.horizontal = 20
+inner.vertical =   20
+outer.left =       20
+outer.bottom =     20
+outer.top =        [{ monitor.main = 20 }, 55]
+outer.right =      20
 
 # 'main' binding mode declaration
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
@@ -80,27 +80,27 @@ outer.right =      10
 [mode.main.binding]
 ctrl-alt-enter = '''exec-and-forget osascript -e '
 on is_running(appName)
-	tell application "System Events" to (name of processes) contains appName
+    tell application "System Events" to (name of processes) contains appName
 end is_running
 if not is_running("iTerm2") then
-	tell application "iTerm2" to activate
+    tell application "iTerm2" to activate
 else
-	tell application "System Events" to tell process "iTerm2"
-		click menu item "New Window" of menu 1 of menu bar item "Shell" of menu bar 1
-	end tell
+    tell application "System Events" to tell process "iTerm2"
+        click menu item "New Window" of menu 1 of menu bar item "Shell" of menu bar 1
+    end tell
 end if'
 '''
 
 ctrl-alt-f = '''exec-and-forget osascript -e '
 on is_running(appName)
-	tell application "System Events" to (name of processes) contains appName
+    tell application "System Events" to (name of processes) contains appName
 end is_running
 if not is_running("Finder") then
-	tell application "Finder" to activate
+    tell application "Finder" to activate
 else
-	tell application "System Events" to tell process "Finder"
-		click menu item "New Finder Window" of menu 1 of menu bar item "File" of menu bar 1
-	end tell
+    tell application "System Events" to tell process "Finder"
+        click menu item "New Finder Window" of menu 1 of menu bar item "File" of menu bar 1
+    end tell
 end if'
 '''
 # See: https://nikitabobko.github.io/AeroSpace/commands#layout
